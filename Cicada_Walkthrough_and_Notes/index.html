@@ -148,6 +148,22 @@
       font-weight: 600;
       text-shadow: 0 0 4px #f53952;
     }
+    .copy-btn {
+      margin-left: 0.5em;
+      background: #2a3246;
+      color: #51a7f9;
+      border: 1px solid #294ca6;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0.2em 0.6em;
+      font-size: 1em;
+      vertical-align: middle;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: #f53952;
+      color: #fff;
+    }
     /* Responsive */
     @media (max-width: 900px) {
       .content {
@@ -269,8 +285,8 @@
           });
       };
 
-// Now append the button
-tdCmd.appendChild(copyBtn);
+      // Now append the button
+      tdCmd.appendChild(copyBtn);
 
       const tdDesc = document.createElement('td');
       tdDesc.textContent = desc;
@@ -329,6 +345,15 @@ tdCmd.appendChild(copyBtn);
       currentIndex = (currentIndex + 1) % slides.length;
       showSlide(currentIndex);
     };
+    function copyCmd(btn) {
+      const code = btn.previousElementSibling;
+      const text = code.textContent;
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          btn.textContent = "✓";
+          setTimeout(() => btn.textContent = "📋", 800);
+        });
+}
   </script>
 </body>
 </html>
