@@ -101,11 +101,15 @@
     }
     .carousel-img {
       width: 100%;
-      height: 260px;
-      object-fit: contain;
+      max-width: 100%;
+      height: 400px; /* or adjust as needed */
+      max-height: 70vh; /* Responsive on different screens */
+      object-fit: contain; /* or 'cover' if you prefer cropping */
       background: #1c1f35;
       filter: drop-shadow(0 0 8px #f54242);
       border-radius: 8px;
+      display: block;
+      margin: 0 auto;
     }
     .carousel-controls {
       display: flex;
@@ -252,6 +256,22 @@
       const code = document.createElement('code');
       code.textContent = cmd;
       tdCmd.appendChild(code);
+      // Create the copy button
+      const copyBtn = document.createElement('button');
+      copyBtn.className = 'copy-btn';
+      copyBtn.textContent = '📋';
+      copyBtn.title = 'Copy to clipboard';
+      copyBtn.onclick = function() {
+        navigator.clipboard.writeText(cmd)
+          .then(() => {
+            copyBtn.textContent = '✓';
+            setTimeout(() => copyBtn.textContent = '📋', 800);
+          });
+      };
+
+// Now append the button
+tdCmd.appendChild(copyBtn);
+
       const tdDesc = document.createElement('td');
       tdDesc.textContent = desc;
       tr.appendChild(tdCmd);
