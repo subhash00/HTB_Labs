@@ -4,7 +4,7 @@
 
 | Lab Name | Markdown Walkthrough | Live Walkthrough | Folder Link |
 |----------|----------------------|------------------|-------------|
-| Cicada   | [cicada.md](./Cicada/Cicada_Walkthrough_and_Notes.md) | [View Page](https://subhash00.github.io/HTB_Labs/Cicada_Walkthrough_and_Notes/) | [cicada/](./Cicada_Walkthrough_and_Notes/) |
+| Cicada   | [cicada.md](./Cicada/Cicada_Walkthrough_and_Notes.md) | [View Page](https://subhash00.github.io/HTB_Labs/Cicada_Walkthrough_and_Notes/) | [cicada/](./Cicada/) |
 
 
 
