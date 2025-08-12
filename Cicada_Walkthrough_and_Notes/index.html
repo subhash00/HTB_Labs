@@ -5,7 +5,7 @@
   <title>HTB Cicada Lab Walkthrough</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-   
+    /* Dark Theme Colors with radium-like highlight: blues, blacks, reds */
     body {
       margin: 0;
       font-family: 'Fira Mono', Menlo, monospace;
@@ -70,7 +70,7 @@
       border: 1px solid #660000;
       color: #e0e8ff;
     }
-   
+    /* Carousel Styles */
     .carousel-container {
       width: 100%;
       max-width: 420px;
@@ -81,9 +81,14 @@
       overflow: hidden;
       margin: 0 auto;
       border: 2px solid #bf0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .carousel-slide {
       display: none;
+      width: 100%;
+      position: relative;
     }
     .carousel-slide.active {
       display: block;
@@ -101,21 +106,23 @@
     }
     .carousel-img {
       width: 100%;
-      height: calc(70vh - 50px); /* Occupies almost all available pane height */
-      max-height: 550px;          /* Set a reasonable limit */
-      object-fit: contain;        /* Keeps aspect ratio */
-      padding: 20px;              /* Adds padding around the image */
+      height: calc(70vh - 50px);
+      max-height: 550px;
+      object-fit: contain;
+      padding: 20px;
       background: #1c1f35;
       display: block;
       margin: 0 auto;
       border-radius: 14px;
       box-sizing: border-box;
+      filter: drop-shadow(0 0 8px #f54242);
     }
-
     .carousel-controls {
       display: flex;
       justify-content: space-between;
       margin-top: 0.45rem;
+      width: 100%;
+      max-width: 420px;
     }
     .carousel-btn {
       background: #0b2a4b;
@@ -128,6 +135,7 @@
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
       text-shadow: 0 0 6px #f53952;
+      user-select: none;
     }
     .carousel-btn:hover {
       background: #f53952;
@@ -148,22 +156,6 @@
       user-select: none;
       font-weight: 600;
       text-shadow: 0 0 4px #f53952;
-    }
-    .copy-btn {
-      margin-left: 0.5em;
-      background: #2a3246;
-      color: #51a7f9;
-      border: 1px solid #294ca6;
-      border-radius: 5px;
-      cursor: pointer;
-      padding: 0.2em 0.6em;
-      font-size: 1em;
-      vertical-align: middle;
-      transition: background 0.2s;
-    }
-    .copy-btn:hover {
-      background: #f53952;
-      color: #fff;
     }
     /* Responsive */
     @media (max-width: 900px) {
@@ -189,6 +181,7 @@
       font-size: 1em;
       font-weight: 600;
       text-shadow: 0 0 6px #e01010;
+      user-select: text;
     }
     table {
       width: 100%;
@@ -202,11 +195,31 @@
       border-bottom: 1px solid #3a0a0a;
       text-align: left;
       color: #f0dcdc;
+      vertical-align: middle;
     }
     th {
       background: #bf0a0a;
       color: #fff;
       text-shadow: 0 0 4px #660000;
+    }
+    .copy-btn {
+      margin-left: 0.5em;
+      background: #2a3246;
+      color: #51a7f9;
+      border: 1px solid #294ca6;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 0.2em 0.6em;
+      font-size: 1em;
+      transition: background 0.2s;
+      user-select: none;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .copy-btn:hover {
+      background: #f53952;
+      color: #fff;
+      box-shadow: 0 0 10px #ff0000;
     }
   </style>
 </head>
@@ -222,9 +235,9 @@
         <table>
           <thead>
             <tr>
-                <th>Command</th>
-                <th>Description</th>
-                <th>Copy</th>
+              <th>Command</th>
+              <th>Description</th>
+              <th>Copy</th>
             </tr>
           </thead>
           <tbody id="commands-body"><!-- commands dynamically inserted here --></tbody>
@@ -244,7 +257,7 @@
   </div>
 
   <script>
-    // Commands List as array of objects
+    // Commands Array
     const commands = [
       { cmd: 'nmap -sC -sV -Pn 10.10.11.35', desc: 'Scan ports/services with default scripts.' },
       { cmd: 'echo "10.10.11.35 cicada.htb" | sudo tee -a /etc/hosts', desc: 'Add domain to hosts file.' },
@@ -266,28 +279,28 @@
       { cmd: "evil-winrm -u Administrator -H 2b87e7c93a3e8a0ea4a581937016f341 -i cicada.htb", desc: 'Admin shell via pass-the-hash.' }
     ];
 
-    // Populate commands in the table
     const commandsBody = document.getElementById('commands-body');
+
     commands.forEach(({ cmd, desc }) => {
       const tr = document.createElement('tr');
-      
+
       // Command cell
       const tdCmd = document.createElement('td');
       const code = document.createElement('code');
       code.textContent = cmd;
       tdCmd.appendChild(code);
-      
+
       // Description cell
       const tdDesc = document.createElement('td');
       tdDesc.textContent = desc;
-      
-      // Copy button cell (after description)
+
+      // Copy button cell
       const tdCopy = document.createElement('td');
       const copyBtn = document.createElement('button');
       copyBtn.className = 'copy-btn';
       copyBtn.textContent = '📋';
       copyBtn.title = 'Copy to clipboard';
-      copyBtn.onclick = function() {
+      copyBtn.onclick = function () {
         navigator.clipboard.writeText(cmd)
           .then(() => {
             copyBtn.textContent = '✓';
@@ -295,27 +308,18 @@
           });
       };
       tdCopy.appendChild(copyBtn);
-      
+
       tr.appendChild(tdCmd);
       tr.appendChild(tdDesc);
       tr.appendChild(tdCopy);
       commandsBody.appendChild(tr);
     });
-    
-      const tdDesc = document.createElement('td');
-      tdDesc.textContent = desc;
-      tr.appendChild(tdCmd);
-      tr.appendChild(tdDesc);
-      commandsBody.appendChild(tr);
-    });
 
-    // Set how many images you have in the img/ folder (named 1.png, 2.png, etc.)
-    const totalImages = 22;  // <-- Change this number to your actual image count
+    // Number of images in img/ folder named 1.png, 2.png, ...
+    const totalImages = 5; // Adjust this count to your actual images
 
-    // Carousel container for the images
     const carouselContainer = document.getElementById('carousel');
 
-    // Create carousel slides dynamically based on available images
     function createSlides(n) {
       for (let i = 1; i <= n; i++) {
         const slide = document.createElement('div');
@@ -338,7 +342,6 @@
     }
     createSlides(totalImages);
 
-    // Carousel navigation
     const slides = document.querySelectorAll('.carousel-slide');
     const prevBtn = document.getElementById('carousel-prev');
     const nextBtn = document.getElementById('carousel-next');
@@ -359,15 +362,6 @@
       currentIndex = (currentIndex + 1) % slides.length;
       showSlide(currentIndex);
     };
-    function copyCmd(btn) {
-      const code = btn.previousElementSibling;
-      const text = code.textContent;
-      navigator.clipboard.writeText(text)
-        .then(() => {
-          btn.textContent = "✓";
-          setTimeout(() => btn.textContent = "📋", 800);
-        });
-}
   </script>
 </body>
 </html>
