@@ -1,6 +1,6 @@
 # EscapeTwo HTB Walkthrough
 
-[![Hack The Box](https://img.shields.io/badge/HackTheBox-EscapeTwo-green?logo=hackthebox)](https://www.hackthebox.com)
+[![Hack The Box](https://img.shields.io/badge/HackTheBox-EscapeTwo-green?logo=hackthebox)](https://app.hackthebox.com/machines/642)
 [![Difficulty: Easy](https://img.shields.io/badge/Difficulty-Easy-green)](https://github.com/HTB/Challenges)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-blue)](https://github.com/HTB/Challenges)
 [![Topic: Active Directory](https://img.shields.io/badge/Topic-Active%20Directory-yellowgreen)](https://en.wikipedia.org/wiki/Active_Directory)
