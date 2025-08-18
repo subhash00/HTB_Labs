@@ -33,7 +33,7 @@ EscapeTwo is an easy Windows domain machine showcasing a full AD domain takeover
 - [8. ACL Abuse and ADCS Enumeration](#8-acl-abuse-and-adcs-enumeration)
 - [9. Exploiting Vulnerable Certificate Template](#9-exploiting-vulnerable-certificate-template)
 - [10. Domain Admin Access and Root Flag](#10-domain-admin-access-and-root-flag)
-- [11. Stepwise PoC (click to expand)](#10-step-wise-poc)
+- [11. Stepwise PoC (click to expand)](#11-step-wise-poc)
 
 ---
 
