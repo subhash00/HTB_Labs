@@ -33,7 +33,7 @@ EscapeTwo is an easy Windows domain machine showcasing a full AD domain takeover
 - [8. ACL Abuse and ADCS Enumeration](#8-acl-abuse-and-adcs-enumeration)
 - [9. Exploiting Vulnerable Certificate Template](#9-exploiting-vulnerable-certificate-template)
 - [10. Domain Admin Access and Root Flag](#10-domain-admin-access-and-root-flag)
-- [11. Stepwise PoC (click to expand)](#11-stepwise-poc-click-to-expand)
+- [11. Stepwise PoC](#11-stepwise-poc)
 
 ---
 
@@ -177,10 +177,11 @@ type C:\Users\Administrator\Desktop\root.txt
 
 ---
 
-## 11. Stepwise PoC (click to expand)
+## 11. Stepwise PoC
 
 <details>
- <img width="1567" height="841" alt="39" src="https://github.com/user-attachments/assets/cf78e34a-3d0b-4eba-b639-657c3207a13f" />
+<summary>💻<strong>(click to expand)</strong> </summary>
+<img width="1567" height="841" alt="39" src="https://github.com/user-attachments/assets/cf78e34a-3d0b-4eba-b639-657c3207a13f" />
 <img width="1163" height="746" alt="38" src="https://github.com/user-attachments/assets/da0d5c09-c9f9-4460-8e48-01f1d860b11b" />
 <img width="1090" height="94" alt="37" src="https://github.com/user-attachments/assets/fa326e43-0f87-4fae-80d0-1ba35e1adc18" />
 <img width="1827" height="468" alt="36" src="https://github.com/user-attachments/assets/ae250058-a54a-45de-bcdf-3b4808ff4148" />
