@@ -33,7 +33,7 @@ EscapeTwo is an easy Windows domain machine showcasing a full AD domain takeover
 - [8. ACL Abuse and ADCS Enumeration](#8-acl-abuse-and-adcs-enumeration)
 - [9. Exploiting Vulnerable Certificate Template](#9-exploiting-vulnerable-certificate-template)
 - [10. Domain Admin Access and Root Flag](#10-domain-admin-access-and-root-flag)
-- [11. Stepwise PoC (click to expand)](#stepwise-poc-click-to-expand)
+- [11. Stepwise PoC (click to expand)](#11-stepwise-poc-click-to-expand)
 
 ---
 
@@ -179,8 +179,48 @@ type C:\Users\Administrator\Desktop\root.txt
 
 ## 11. Stepwise PoC (click to expand)
 
-- Use domain admin NTLM hash for pass-the-hash WinRM login.
-- Gain full domain admin shell and capture root flag.
+<details>
+ <img width="1567" height="841" alt="39" src="https://github.com/user-attachments/assets/cf78e34a-3d0b-4eba-b639-657c3207a13f" />
+<img width="1163" height="746" alt="38" src="https://github.com/user-attachments/assets/da0d5c09-c9f9-4460-8e48-01f1d860b11b" />
+<img width="1090" height="94" alt="37" src="https://github.com/user-attachments/assets/fa326e43-0f87-4fae-80d0-1ba35e1adc18" />
+<img width="1827" height="468" alt="36" src="https://github.com/user-attachments/assets/ae250058-a54a-45de-bcdf-3b4808ff4148" />
+<img width="1224" height="622" alt="35" src="https://github.com/user-attachments/assets/6264ec1c-f2dc-4f0e-af5e-c2da8b4e02a1" />
+<img width="1908" height="147" alt="34" src="https://github.com/user-attachments/assets/29b6aaa8-2abd-4668-b769-e8a1fa85d4c4" />
+<img width="1835" height="726" alt="33" src="https://github.com/user-attachments/assets/6e94d1d3-a9e7-4f54-9a8f-6cd5b31eb144" />
+<img width="838" height="356" alt="32" src="https://github.com/user-attachments/assets/e0670fcf-38fa-414d-95f5-0018013d7ad2" />
+<img width="1213" height="843" alt="31" src="https://github.com/user-attachments/assets/57a3e493-1569-4cde-9b44-a19696eda0d8" />
+<img width="1200" height="816" alt="30" src="https://github.com/user-attachments/assets/11129b40-7bd6-4b84-ab19-d9aad51dbc28" />
+<img width="1107" height="662" alt="29" src="https://github.com/user-attachments/assets/a8e0e96f-bef7-4918-8afb-5eff7c8844ed" />
+<img width="1381" height="341" alt="28" src="https://github.com/user-attachments/assets/56c42ec9-919b-4ae6-80ee-9429d9ba82ac" />
+<img width="1399" height="597" alt="27" src="https://github.com/user-attachments/assets/796b65f9-7d01-4e5c-bd7f-3f6b066c7431" />
+<img width="1410" height="811" alt="26" src="https://github.com/user-attachments/assets/5151efae-e489-4f7a-bb5c-f86837eb53c7" />
+<img width="749" height="170" alt="25" src="https://github.com/user-attachments/assets/666da45b-b6d6-418a-a0c0-924a0fd2092b" />
+<img width="843" height="136" alt="24" src="https://github.com/user-attachments/assets/d23abef6-7ce1-462e-ac88-f5368e5caf20" />
+<img width="1405" height="485" alt="23" src="https://github.com/user-attachments/assets/0564f09f-007f-4a6b-b692-eed71288a235" />
+<img width="1698" height="772" alt="22" src="https://github.com/user-attachments/assets/1c69f4a6-56ea-4708-9614-17b8b70abfcf" />
+<img width="867" height="501" alt="21" src="https://github.com/user-attachments/assets/ada0b434-acf4-468a-8907-fed186ba56e1" />
+<img width="920" height="718" alt="20" src="https://github.com/user-attachments/assets/0640dfdf-667d-443e-9334-8783ab7deb1b" />
+<img width="756" height="707" alt="19" src="https://github.com/user-attachments/assets/6726c592-3a77-4f8f-adc7-75a3edbacfba" />
+<img width="948" height="380" alt="18" src="https://github.com/user-attachments/assets/6763d4a1-5373-4952-a383-278ae40c5662" />
+<img width="1055" height="471" alt="17" src="https://github.com/user-attachments/assets/6b46c9bd-0378-4ece-8dd7-60dab7bc2fe8" />
+<img width="1003" height="487" alt="16" src="https://github.com/user-attachments/assets/ce2f4474-46e9-4f5a-b943-871f87cd5c95" />
+<img width="976" height="730" alt="15" src="https://github.com/user-attachments/assets/92426af9-b80f-4dae-828d-6f856206a30c" />
+<img width="1593" height="848" alt="14" src="https://github.com/user-attachments/assets/5a0817fc-c347-40eb-8698-6166d9567721" />
+<img width="1026" height="281" alt="13" src="https://github.com/user-attachments/assets/87cad8f2-7a3f-4e75-b1da-e47eb4a82156" />
+<img width="1007" height="304" alt="12" src="https://github.com/user-attachments/assets/5518be24-e84c-44f2-872a-35ba15410648" />
+<img width="1010" height="212" alt="11" src="https://github.com/user-attachments/assets/c3a935f3-c6c9-4309-aec8-d80d04944e44" />
+<img width="1593" height="711" alt="10" src="https://github.com/user-attachments/assets/8cc34080-7466-4aba-b90e-77dbf06a296b" />
+<img width="1015" height="356" alt="9" src="https://github.com/user-attachments/assets/3c88a4f3-850c-4a52-aebc-0469eaa36d2b" />
+<img width="1010" height="233" alt="8" src="https://github.com/user-attachments/assets/83a27c6d-c699-4552-bbb7-ae764d6d7025" />
+<img width="1591" height="663" alt="7" src="https://github.com/user-attachments/assets/8140794e-8d30-4c0c-a6d2-c1dfa0eb2a80" />
+<img width="1829" height="669" alt="6" src="https://github.com/user-attachments/assets/fc9acdee-23bd-40b6-9252-49e88eda588d" />
+<img width="1227" height="691" alt="5" src="https://github.com/user-attachments/assets/52dca908-e45d-4e9c-acea-5857fdfd71cc" />
+<img width="1016" height="287" alt="4" src="https://github.com/user-attachments/assets/526a5f64-d973-4f41-bfcb-becbeaaf0bf0" />
+<img width="1008" height="452" alt="3" src="https://github.com/user-attachments/assets/fef3eb82-7daf-4cff-a6c7-6a6291d7a28b" />
+<img width="1011" height="509" alt="2" src="https://github.com/user-attachments/assets/60caf3be-d8a5-4a40-ab17-9083b37c7c9a" />
+<img width="1021" height="478" alt="1" src="https://github.com/user-attachments/assets/05301ce8-6ced-4939-85b8-36b4e99999a1" />
+
+</details>
 
 ---
 
