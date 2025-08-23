@@ -5,8 +5,8 @@
 | Lab Name | Markdown Walkthrough | Folder Link | Live Walkthrough |
 |----------|----------------------|-------------|------------------|
 | Cicada   | [Cicada.md](./Cicada/Cicada_Walkthrough_and_Notes.md) | [cicada/](./Cicada/) | [View Page](https://subhash00.github.io/HTB_Labs/Cicada_Walkthrough_and_Notes/) |
-| EscapeTwo   | [EscapeTwo.md](./EscapeTwo/EscapeTwo.md) | [cicada/](./Escapetwo) |  |
-| Support   | [Support.md](./Support/Support_writeup.md) | [cicada/](./Support/) | |
+| EscapeTwo   | [EscapeTwo.md](./EscapeTwo/EscapeTwo.md) | [EscapeTwo/](./Escapetwo) |  |
+| Support   | [Support.md](./Support/Support_writeup.md) | [Support/](./Support/) | |
 
 
 
