@@ -121,7 +121,7 @@ cat C:\creds\root.txt
 
 ---
 
-## 11. Stepwise PoC
+## Stepwise PoC
 
 <details>
 <summary>💻<strong>(click to expand)</strong> </summary>
