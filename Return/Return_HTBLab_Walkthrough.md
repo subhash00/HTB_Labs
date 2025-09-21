@@ -21,7 +21,7 @@
 - [Initial Foothold via WinRM](#initial-foothold-via-winrm)
 - [Privilege Escalation](#privilege-escalation)
 - [Post Exploitation and Flag Capture](#post-exploitation-and-flag-capture)
-- [Stepwise PoC](stepwise-poc)
+- [Stepwise PoC](#stepwise-poc)
 - [Tools Used](#tools-used)
 - [Technical Notes](#technical-notes)
 
